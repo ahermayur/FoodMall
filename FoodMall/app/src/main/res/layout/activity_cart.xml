@@ -4,8 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    android:background="@drawable/gradient_color"
     android:orientation="vertical">
     <TextView
         android:gravity="right"
@@ -18,5 +16,15 @@
     <ListView
         android:id="@+id/lv_cart_items"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/iv_drawable"
+        android:layout_gravity="center"
+        android:visibility="invisible"
+        android:src="@drawable/textempty"
+        android:onClick="openProducts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dip"
+        />
 </LinearLayout>

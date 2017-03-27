@@ -4,32 +4,32 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:gravity="center"
-    app:cardBackgroundColor="#FFF2EFEF"
+    app:cardBackgroundColor="@color/colorPrimary"
     app:cardCornerRadius="10dp">
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:gravity="center"
+        android:orientation="horizontal"
         android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:orientation="horizontal">
+        android:paddingRight="10dp">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            xmlns:app="http://schemas.android.com/apk/res-auto"
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/img_cat_icon"
             android:layout_width="40dp"
-            app:civ_border_width="2dp"
+            android:layout_gravity="center"
+            android:layout_height="40dp"
             app:civ_border_color="#FF000000"
-            android:layout_height="40dp" />
+            app:civ_border_width="2dp" />
 
         <TextView
             android:id="@+id/tv_cat_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:layout_width="wrap_content"
-            android:textSize="38dp"
-            android:layout_height="wrap_content"
+            android:textSize="28dp"
             android:textStyle="bold"
 
             />

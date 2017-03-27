@@ -107,6 +107,7 @@ public class Mall_Dashboard_Hotels extends AppCompatActivity {
                     intent.putExtra("hotelid",hid[position]);
                     intent.putExtra("hotelname",hname[position]);
                     startActivity(intent);
+                    finish();
                 }
             });
             img_menu.setOnClickListener(new View.OnClickListener() {
@@ -121,7 +122,7 @@ public class Mall_Dashboard_Hotels extends AppCompatActivity {
                                 case R.id.popup_description:
                                     final Dialog dialog = new Dialog(Mall_Dashboard_Hotels.this);
                                     dialog.setContentView(R.layout.custom_hotel_decription);
-                                    dialog.setTitle(" Book Appointment ");
+                                    dialog.setTitle(" Loading please wait...! ");
                                     TextView tv_desc_hotel_name=(TextView)dialog.findViewById(R.id.tv_desc_hotel_name);
                                     TextView tv_desc_hotel_desc=(TextView)dialog.findViewById(R.id.tv_desc_hotel_desc);
                                     ImageView imv_hotel_des_logo=(ImageView)dialog.findViewById(R.id.imv_hotel_des_logo);
@@ -130,7 +131,6 @@ public class Mall_Dashboard_Hotels extends AppCompatActivity {
                                     tv_desc_hotel_name.setText(hname[position]+"");
                                     tv_desc_hotel_desc.setText(hdesc[position]+"");
                                     imv_hotel_des_logo.setImageBitmap(logo[position]);
-
                                     context=dialog.getContext();
 
                                     btn_ok.setOnClickListener(new View.OnClickListener() {
@@ -151,8 +151,6 @@ public class Mall_Dashboard_Hotels extends AppCompatActivity {
                                     break;
 
                             }
-
-                            Toast.makeText(Mall_Dashboard_Hotels.this,"You Clicked : " + item.getTitle(),Toast.LENGTH_SHORT).show();
                             return true;
                         }
                     });
@@ -186,6 +184,8 @@ public class Mall_Dashboard_Hotels extends AppCompatActivity {
     }
     private class AsyncGetHotelDetails extends AsyncTask<Void,Void,Void>{
         RestAPI api =new RestAPI();
+        Boolean result=false;
+        String msg,title;
         @Override
         protected void onPreExecute() {
             progress.setMessage("Please Wait a Moment...");
@@ -197,7 +197,12 @@ public class Mall_Dashboard_Hotels extends AppCompatActivity {
 
             try {
                 object=api.HotelDetaillist();
-
+                result=object.getBoolean("Successful");
+                if(result==false)
+                {
+                    title="Connection Error";
+                    msg=object.getString("ErrorMessage");
+                }
                 JSONArray jsonArray=object.getJSONArray("Value");
                 JSONObject jsonObj=null;
 
@@ -233,7 +238,14 @@ public class Mall_Dashboard_Hotels extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             progress.dismiss();
-            loadData();
+            if (result==false)
+            {
+                AlertDialogManager alert=new AlertDialogManager();
+                alert.showAlertDialog1(Mall_Dashboard_Hotels.this,title,msg,true);
+            }
+            else {
+                loadData();
+            }
         }
     }
 }

@@ -1,5 +1,7 @@
 package com.example.lnc.foodmall.Cart;
 
+import android.graphics.Bitmap;
+
 /**
  * Created by lnc on 14/3/17.
  */
@@ -10,14 +12,24 @@ public class Product {
     public int pCount;
     public String pName;
     public String pDesc;
-
-    public Product(int pId, int pPrice, int pCount, String pName, String pDesc) {
+    public Bitmap pImage;
+    public Product(int pId, int pPrice, int pCount, String pName, String pDesc, Bitmap pImage) {
         this.pId = pId;
         this.pPrice = pPrice;
         this.pCount = pCount;
         this.pName = pName;
+        this.pImage = pImage;
         this.pDesc = pDesc;
     }
+
+    public Bitmap getpImage() {
+        return pImage;
+    }
+
+    public void setpImage(Bitmap pImage) {
+        this.pImage = pImage;
+    }
+
     public int getpId() {
         return pId;
     }

@@ -41,6 +41,7 @@
             android:layout_marginRight="10dp"
             android:gravity="center"
             android:text=" Checkout "
+            android:onClick="openCart"
             android:id="@+id/action_bar_price"
             android:textAppearance="?android:textAppearanceMedium"
             android:textStyle="bold" />
@@ -49,11 +50,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:text=""
-            android:textColor="#f00"
+            android:onClick="openCart"
+            android:gravity="center"
+            android:textColor="@color/colorSecondary"
             android:textStyle="bold"
+            android:textAppearance="?android:textAppearanceLarge"
             android:layout_marginRight="10dp"
-            android:drawableLeft="@drawable/cart"
-            android:drawableTint="#fffeaa0c" />
+            android:drawableBottom="@drawable/cart"
+            android:drawableTint="@color/colorSecondary" />
     </LinearLayout>
 </LinearLayout>

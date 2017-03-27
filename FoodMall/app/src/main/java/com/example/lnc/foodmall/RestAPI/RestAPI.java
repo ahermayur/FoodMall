@@ -127,5 +127,18 @@ package com.example.lnc.foodmall.RestAPI;
          result = new JSONObject(r);
          return result;
      }
+     public JSONObject Product(int cid) throws Exception {
+         JSONObject result = null;
+         JSONObject o = new JSONObject();
+         JSONObject p = new JSONObject();
+         o.put("interface","RestAPI");
+         o.put("method", "Product");
+         p.put("cid",mapObject(cid));
+         o.put("parameters", p);
+         String s = o.toString();
+         String r = load(s);
+         result = new JSONObject(r);
+         return result;
+     }
 
  }

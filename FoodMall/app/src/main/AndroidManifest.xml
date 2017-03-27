@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Hotel_Product_Dashboard" />
-        <activity android:name=".Hotel_Dashboard"></activity>
+        <activity android:name=".Cart.Cart_Activity"></activity>
     </application>
 
 </manifest>

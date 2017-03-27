@@ -1,99 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@android:color/transparent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="6dp"
-        >
+        app:cardBackgroundColor="#85FF4081">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/imv_product_logo"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/foodmalllogo" />
-
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tv_product_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:text="Name"
-                    android:textAppearance="?android:textAppearanceLarge"
-                    android:textColor="#ff00ddff" />
+                <ImageView
+                    android:id="@+id/imv_product_logo"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/foodmalllogo" />
+
+
                 <LinearLayout
-                    android:gravity="end"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="5dp">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:paddingLeft="5dp"
-                        android:paddingRight="5dp"
-                        android:text="Price :"
-                        android:gravity="center"
-                        android:textColor="#0a0" />
+                        android:id="@+id/tv_product_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Name"
+                        android:textAppearance="?android:textAppearanceLarge"
+                        android:textColor="#000" />
 
-                    <TextView
-                        android:id="@+id/tv_product_price"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:text="Price :"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="#000"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_product_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableRight="@drawable/rupee"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:text="Price :"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="#000"
+                            android:textStyle="bold" />
+                        <ImageView
+                            android:id="@+id/imv_product_add_remove"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/cartadd" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableRight="@drawable/rupee"
-                        android:gravity="center"
-                        android:paddingLeft="5dp"
-                        android:paddingRight="5dp"
-                        android:text="Price :"
-                        android:textColor="#0a0" />
+                        android:layout_gravity="center"
+                        android:background="#9D29B1">
 
-                </LinearLayout>
-                <LinearLayout
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/imv_product_count_minus"
+                            android:layout_width="wrap_content"
 
-                    <ImageView
-                        android:id="@+id/imv_product_remove"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/minus" />
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/minus" />
 
-                    <TextView
-                        android:id="@+id/tv_product_count"
-                        android:layout_width="70dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:paddingLeft="5dp"
-                        android:paddingRight="5dp"
-                        android:text="0"
-                        android:textAppearance="?android:textAppearanceMedium"
-                        android:textColor="#a00" />
+                        <TextView
+                            android:id="@+id/tv_product_count"
+                            android:layout_width="50dp"
+                            android:layout_height="match_parent"
+                            android:background="#9D29B1"
+                            android:gravity="center"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:text="0"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="#FFF" />
 
-                    <ImageView
-                        android:id="@+id/imv_product_add"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/plus" />
+                        <ImageView
+                            android:id="@+id/imv_product_count_plus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/plus" />
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_product_details"
